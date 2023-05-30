@@ -1,0 +1,468 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "Base2DState",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/base_2d_state_machine/base_2d_states/base_2d_state.gd"
+}, {
+"base": "Node",
+"class": "Base2DStateMachine",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/base_2d_state_machine/base_2d_state_machine.gd"
+}, {
+"base": "Node",
+"class": "BaseAnalysableInfo",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/base_analyzable_info.gd"
+}, {
+"base": "Node",
+"class": "BaseMapod2D3DScene",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/base_mapod_2d_3d_scene.gd"
+}, {
+"base": "Base2DState",
+"class": "BaseMapod2DState",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/base_2d_state_machine/base_2d_states/base_mapod_2d_state.gd"
+}, {
+"base": "Node",
+"class": "BaseMapodCore",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_scenes/base_mapod_core/base_mapod_core.gd"
+}, {
+"base": "Spatial",
+"class": "BaseMapodElement",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_scenes/base_mapod_element/base_mapod_element.gd"
+}, {
+"base": "BaseMapod2D3DScene",
+"class": "BaseMapodMainMenu",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_scenes/base_mapod_main_menu/base_mapod_main_menu.gd"
+}, {
+"base": "Label",
+"class": "BaseMapodMenuLabel",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/base_mapod_menu_label.gd"
+}, {
+"base": "StaticBody",
+"class": "BaseMapodObject",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/base_mapod_object.gd"
+}, {
+"base": "BaseMapodPlayer2D",
+"class": "BaseMapodObserver",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_scenes/base_mapod_observer/base_mapod_observer.gd"
+}, {
+"base": "KinematicBody",
+"class": "BaseMapodPlayer",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/base_mapod_player.gd"
+}, {
+"base": "Camera2D",
+"class": "BaseMapodPlayer2D",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/base_mapod_2d_player.gd"
+}, {
+"base": "BaseState",
+"class": "BaseMapodState",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/base_state_machine/base_states/base_mapod_state.gd"
+}, {
+"base": "BaseMapodPlayer",
+"class": "BaseMapodVisitor",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_scenes/base_mapod_visitor/base_mapod_visitor.gd"
+}, {
+"base": "Resource",
+"class": "BaseResMapodElement",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_resources/base_res_mapod_element.gd"
+}, {
+"base": "Resource",
+"class": "BaseResMapodPansky",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_resources/base_res_mapod_pansky.gd"
+}, {
+"base": "Resource",
+"class": "BaseResMapodVersion",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_resources/base_res_mapod_version.gd"
+}, {
+"base": "Node",
+"class": "BaseState",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/base_state_machine/base_states/base_state.gd"
+}, {
+"base": "Node",
+"class": "BaseStateMachine",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/base_state_machine/base_state_machine.gd"
+}, {
+"base": "BaseMapod2DState",
+"class": "Choices2DState",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_scenes/base_mapod_observer/states/choices_2d_state.gd"
+}, {
+"base": "BaseMapodState",
+"class": "ChoicesState",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_scenes/base_mapod_visitor/states/choices_state.gd"
+}, {
+"base": "BaseMapodState",
+"class": "FirstInteractionState",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_scenes/base_mapod_visitor/states/first_interaction_state.gd"
+}, {
+"base": "Mapod2DScene",
+"class": "Mapod2DPlanetScene",
+"language": "GDScript",
+"path": "res://mapod_core/mapod_scenes/mapod_2d_planet_scene/mapod_2d_planet_scene.gd"
+}, {
+"base": "BaseMapod2D3DScene",
+"class": "Mapod2DScene",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/mapod_2d_scene.gd"
+}, {
+"base": "Base2DStateMachine",
+"class": "Mapod2DStateMachine",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_scenes/base_mapod_observer/mapod_2d_state_machine.gd"
+}, {
+"base": "BaseMapodObject",
+"class": "MapodObjectEmpty",
+"language": "GDScript",
+"path": "res://mapod_core/mapod_objects/mapod_object_empty/mapod_object_empty.gd"
+}, {
+"base": "BaseMapodObject",
+"class": "MapodObjectPin",
+"language": "GDScript",
+"path": "res://mapod_core/mapod_objects/mapod_object_pin/mapod_object_pin.gd"
+}, {
+"base": "MapodObjectPin",
+"class": "MapodObjectPinAudio",
+"language": "GDScript",
+"path": "res://mapod_core/mapod_objects/mapod_object_pin/mapod_object_pin_audio/mapod_object_pin_audio.gd"
+}, {
+"base": "MapodScene",
+"class": "MapodPlanetScene",
+"language": "GDScript",
+"path": "res://mapod_core/mapod_scenes/mapod_planet_scene/mapod_planet_scene.gd"
+}, {
+"base": "BaseMapod2D3DScene",
+"class": "MapodScene",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/mapod_scene.gd"
+}, {
+"base": "BaseStateMachine",
+"class": "MapodStateMachine",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_scenes/base_mapod_visitor/mapod_state_machine.gd"
+}, {
+"base": "StaticBody",
+"class": "MapodStaticBodyAnalyzable",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/mapod_static_body_analyzable.gd"
+}, {
+"base": "StaticBody2D",
+"class": "MapodStaticBodyAnalyzable2D",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/mapod_static_body_analyzable_2d.gd"
+}, {
+"base": "Node",
+"class": "MapodUtils",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/mapod_utils.gd"
+}, {
+"base": "MoveMapod2DState",
+"class": "Move2DState",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_scenes/base_mapod_observer/states/move_2d_state.gd"
+}, {
+"base": "BaseMapod2DState",
+"class": "MoveMapod2DState",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/base_2d_state_machine/base_2d_states/move_mapod_2d_state.gd"
+}, {
+"base": "BaseMapodState",
+"class": "MoveMapodState",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_classes/base_state_machine/base_states/move_mapod_state.gd"
+}, {
+"base": "MoveMapodState",
+"class": "MoveState",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_scenes/base_mapod_visitor/states/move_state.gd"
+}, {
+"base": "BaseMapod2DState",
+"class": "Open2DState",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_scenes/base_mapod_observer/states/open_2d_state.gd"
+}, {
+"base": "BaseMapodState",
+"class": "OpenState",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_scenes/base_mapod_visitor/states/open_state.gd"
+}, {
+"base": "BaseMapod2DState",
+"class": "Quiet2DState",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_scenes/base_mapod_observer/states/quiet_2d_state.gd"
+}, {
+"base": "BaseMapodState",
+"class": "QuietState",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_scenes/base_mapod_visitor/states/quiet_state.gd"
+}, {
+"base": "BaseMapodState",
+"class": "SecondInteractionState",
+"language": "GDScript",
+"path": "res://mapod_core/base_mapod_scenes/base_mapod_visitor/states/second_interaction_state.gd"
+} ]
+_global_script_class_icons={
+"Base2DState": "",
+"Base2DStateMachine": "",
+"BaseAnalysableInfo": "",
+"BaseMapod2D3DScene": "",
+"BaseMapod2DState": "",
+"BaseMapodCore": "",
+"BaseMapodElement": "",
+"BaseMapodMainMenu": "",
+"BaseMapodMenuLabel": "",
+"BaseMapodObject": "",
+"BaseMapodObserver": "",
+"BaseMapodPlayer": "",
+"BaseMapodPlayer2D": "",
+"BaseMapodState": "",
+"BaseMapodVisitor": "",
+"BaseResMapodElement": "",
+"BaseResMapodPansky": "",
+"BaseResMapodVersion": "",
+"BaseState": "",
+"BaseStateMachine": "",
+"Choices2DState": "",
+"ChoicesState": "",
+"FirstInteractionState": "",
+"Mapod2DPlanetScene": "",
+"Mapod2DScene": "",
+"Mapod2DStateMachine": "",
+"MapodObjectEmpty": "",
+"MapodObjectPin": "",
+"MapodObjectPinAudio": "",
+"MapodPlanetScene": "",
+"MapodScene": "",
+"MapodStateMachine": "",
+"MapodStaticBodyAnalyzable": "",
+"MapodStaticBodyAnalyzable2D": "",
+"MapodUtils": "",
+"Move2DState": "",
+"MoveMapod2DState": "",
+"MoveMapodState": "",
+"MoveState": "",
+"Open2DState": "",
+"OpenState": "",
+"Quiet2DState": "",
+"QuietState": "",
+"SecondInteractionState": ""
+}
+
+[application]
+
+config/name="c1_empty"
+run/main_scene="res://main/mapod_core/mapod_core.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+MapodGlobal="*res://mapod_core/autoload/mapod_global.gd"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/fullscreen=true
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[input]
+
+mapod_move_forward={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":-1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+mapod_move_backward={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+mapod_move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":-1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+mapod_move_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+mapod_move_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":7,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+mapod_move_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":6,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_t={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":84,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+test={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":61,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+mapod_choices={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":77,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+mapod_open={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+mapod_look_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":2,"axis_value":1.0,"script":null)
+ ]
+}
+mapod_look_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":2,"axis_value":-1.0,"script":null)
+ ]
+}
+mapod_look_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":3,"axis_value":-1.0,"script":null)
+ ]
+}
+mapod_look_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":3,"axis_value":1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+mapod_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+mapod_esc={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+mapod_full_win={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":76,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+mapod_handle={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":71,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+mapod_first_interaction={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+mapod_second_interaction={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":3,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+mapod_zoom_in={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":67,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":4,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+mapod_zoom_out={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":86,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":5,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+mapod_menu_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+mapod_menu_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+mapod_f1={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":70,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[input_devices]
+
+pointing/emulate_mouse_from_touch=false
+
+[physics]
+
+common/physics_fps=30
+common/physics_interpolation=true
+
+[rendering]
+
+quality/filters/sharpen_intensity=0.5
+quality/filters/use_nearest_mipmap_filter=true
+quality/voxel_cone_tracing/high_quality=true
+quality/filters/msaa=3
+quality/filters/use_debanding=true
+quality/dynamic_fonts/use_oversampling=false

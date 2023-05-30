@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://mapod_core/base_mapod_resources/base_res_mapod_version.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+mapod_app_version = "0.0.0.6-a"

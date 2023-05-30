@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/pan_20220810_001.jpg-ac55c2aa75b2dfb1d1d535cca24278fc.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://metaverse/materials/pan_20220810_001.jpg"
+dest_files=[ "res://.import/pan_20220810_001.jpg-ac55c2aa75b2dfb1d1d535cca24278fc.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://mapod_core/base_mapod_scenes/base_mapod_metaverse/base_mapod_metaverse.tscn" type="PackedScene" id=1]
+[ext_resource path="res://mapod_core/base_mapod_resources/base_res_mapod_element.gd" type="Script" id=2]
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 2 )
+mapod_requested_scene = "res://metaverse/planets/shop/shop.tscn"
+description = "Shop"
+information = "No information"
+element_type = 0
+description_color = Color( 1, 1, 0, 1 )
+
+[node name="MapodMetaverse" instance=ExtResource( 1 )]
+visitor_position = Vector3( -3, 2, -4 )
+visitor_angle = Vector2( 10, -220 )
+
+[node name="Terrain" parent="." index="0"]
+elements = [ SubResource( 4 ) ]
